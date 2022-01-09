@@ -1,8 +1,3 @@
-<dependency>
-  <groupId>com.adyen</groupId>
-  <artifactId>adyen-java-api-library</artifactId>
-  <version>17.3</version>
-</dependency>
 Client client = new Client("AQEyhmfxJo7ObRBCw0m/n3Q5qf3VaY9UCJ14XWZE03G/k2NFipry6GGYTvWuBXMZd0RqJhoQwV1bDb7kfNy1WIxIIkxgBw==-AdCP/zpG85OtM/RCbJo1nsL+R6RgVXOleIimQgpsO78=-;9bUs.S7Bp?G?ZB5", Environment.TEST);
 String saleID = "ws_940650@Company.AdyenRecruitment";
 String serviceID = "1122334455";
