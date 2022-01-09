@@ -17,3 +17,4 @@ amount.setValue(12.99L);
 paymentsRequest.setAmount(amount);
 paymentsRequest.setReference("1234523");
 paymentsRequest.setReturnUrl("https://pal-test.adyen.com/pal/servlet/Payment/v68/authorise");
+PaymentsResponse paymentsResponse = checkout.payments(paymentsRequest);
