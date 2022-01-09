@@ -1,0 +1,27 @@
+{
+  "SaleToPOIRequest":{
+    "MessageHeader":{
+      "ProtocolVersion":"3.0",
+      "MessageClass":"Service",
+      "MessageCategory":"Payment",
+      "MessageType":"Request",
+      "SaleID":"ws_940650@Company.AdyenRecruitment",
+      "ServiceID":"12345678",
+      "POIID":"V400m-346533886"
+    },
+    "PaymentRequest":{...}
+        "SaleData":{
+                "SaleTransactionID":{
+                    "TransactionID":"dan01",
+                    "TimeStamp":"2022-01-09T20:11:04+08:00"
+                }
+            },
+            "PaymentTransaction":{
+                "AmountsReq":{
+                    "Currency":"AUD",
+                    "RequestedAmount":12
+                }
+            }
+        }
+    }
+}
