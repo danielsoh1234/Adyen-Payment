@@ -1,27 +1,19 @@
-{
-  "SaleToPOIRequest":{
-    "MessageHeader":{
-      "ProtocolVersion":"3.0",
-      "MessageClass":"Service",
-      "MessageCategory":"Payment",
-      "MessageType":"Request",
-      "SaleID":"ws_940650@Company.AdyenRecruitment",
-      "ServiceID":"12345678",
-      "POIID":"V400m-346533886"
-    },
-    "PaymentRequest":{...}
-        "SaleData":{
-                "SaleTransactionID":{
-                    "TransactionID":"dan01",
-                    "TimeStamp":"2022-01-09T20:11:04+08:00"
-                }
-            },
-            "PaymentTransaction":{
-                "AmountsReq":{
-                    "Currency":"AUD",
-                    "RequestedAmount":12
-                }
-            }
-        }
-    }
-}
+<dependency>
+  <groupId>com.adyen</groupId>
+  <artifactId>adyen-java-api-library</artifactId>
+  <version>17.3</version>
+</dependency>
+Client client = new Client("AQEyhmfxJo7ObRBCw0m/n3Q5qf3VaY9UCJ14XWZE03G/k2NFipry6GGYTvWuBXMZd0RqJhoQwV1bDb7kfNy1WIxIIkxgBw==-AdCP/zpG85OtM/RCbJo1nsL+R6RgVXOleIimQgpsO78=-;9bUs.S7Bp?G?ZB5", Environment.TEST);
+PaymentsRequest paymentsRequest = new PaymentsRequest();
+paymentsRequest.setMerchantAccount("AdyenRecruitmentPOS");
+String encryptedCardNumber = "test_4002690000000008";
+String encryptedExpiryMonth = "test_03";
+String encryptedExpiryYear = "test_2030";
+String encryptedSecurityCode = "test_737";
+paymentsRequest.addEncryptedCardData(encryptedCardNumber,encryptedExpiryMonth, encryptedExpiryYear, encryptedSecurityCode);
+Amount amount = new Amount();
+amount.setCurrency("AUD");
+amount.setValue(12.99L);
+paymentsRequest.setAmount(amount);
+paymentsRequest.setReference("1234523");
+paymentsRequest.setReturnUrl("https://pal-test.adyen.com/pal/servlet/Payment/v68/authorise");
